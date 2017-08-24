@@ -1,3 +1,5 @@
 package com.wizeline.workshop
 
-// TODO create your main function printing a hello world and run it
+fun main(args: Array<String>) {
+    println("Hello World")
+}
