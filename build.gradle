@@ -1,0 +1,36 @@
+// TODO apply here the kotlin plugin
+apply plugin: "application"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // TODO put here the kotlin build script plugin
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+sourceSets {
+    main.kotlin.srcDirs += "src/main"
+    test.kotlin.srcDirs += "src/test"
+}
+
+dependencies {
+    implementation "com.google.code.gson:gson:2.8.1"
+    implementation "com.squareup.okhttp3:okhttp:3.8.1"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.retrofit2:retrofit:2.3.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.2"
+    // TODO put here the kotlin standard library
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:3.8.1"
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.assertj:assertj-core:3.8.0"
+    testImplementation "org.mockito:mockito-core:2.8.47"
+}

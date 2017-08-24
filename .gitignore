@@ -1,0 +1,12 @@
+# folders
+.gradle
+.idea
+build
+out
+
+# files
+.DS_Store
+local.properties
+
+# all files of
+*.iml
