@@ -1,5 +1,6 @@
 package com.wizeline.workshop
 
+import io.reactivex.Single
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -19,6 +20,12 @@ class GetBitcoinTicker(
                 .create(Datasourse::class.java)
     }
 
-    // TODO create the execute function and make the ticker tests pass
+    fun execute(): Single<Ticker> {
+        return datasourse.getTickets("bitcoin")
+                .map { it.asIterable() }
+                .flatMapIterable { it }
+                .filter { it.id == "bitcoin" }
+                .firstOrError()
+    }
 
 }
