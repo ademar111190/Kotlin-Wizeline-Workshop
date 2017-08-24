@@ -7,7 +7,17 @@ class DollarBitcoinConverter(
 ) {
 
     fun execute(dollar: String?): Single<DollarBitcoinModel> {
-        // TODO complete this function making the DollarBitcoinConverterTest tests pass
+        val amount = dollar?.toDoubleOrNull()
+        return if (amount is Double) {
+            getBitcoinTicker.execute()
+                    .map { it.price?.toDoubleOrNull() }
+                    .filter { it > 0.0 }
+                    .map { amount / it }
+                    .map { DollarBitcoinModel(amount.toDollar(), it.toBitcoin()) }
+                    .toSingle()
+        } else {
+            Single.error(IllegalArgumentException("Cannot convert $dollar"))
+        }
     }
 
 }
