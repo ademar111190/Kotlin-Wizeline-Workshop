@@ -1,7 +1,13 @@
 package com.wizeline.workshop
 
+import com.google.gson.annotations.SerializedName
+
 class Ticker {
 
-    // TODO put the json properties and make the Ticker tests pass
+    @SerializedName("price_usd")
+    var price: String? = null
+
+    @SerializedName("id")
+    var id: String? = null
 
 }

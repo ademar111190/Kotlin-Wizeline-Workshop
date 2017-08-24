@@ -30,8 +30,6 @@ class TickerTest {
     @Test
     fun testParser() {
         val ticker = Gson().fromJson(JSON, Ticker::class.java)
-
-        // TODO make this asserts pass, above you have the JSON structure
         assertThat(ticker.id).isEqualTo(ID)
         assertThat(ticker.price).isEqualTo(PRICE)
     }
