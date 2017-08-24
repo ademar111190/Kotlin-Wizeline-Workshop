@@ -5,5 +5,13 @@ fun main(args: Array<String>) {
 
     val input = readLine()
 
-    // TODO Using the DollarBitcoinConverter, send the read input and prints the output
+    DollarBitcoinConverter().execute(input)
+            .doOnSubscribe {
+                println("Please wait meanwhile I convert it")
+            }
+            .subscribe({
+                println("${it.dollar} dollars is equal to ${it.bitcoin} bitcoins")
+            }, {
+                println("Error ${it.message}")
+            })
 }
