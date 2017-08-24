@@ -1,12 +1,14 @@
-// TODO apply here the kotlin plugin
+apply plugin: "kotlin"
 apply plugin: "application"
+
+mainClassName = "com.wizeline.workshop.MainKt"
 
 buildscript {
     repositories {
         mavenCentral()
     }
     dependencies {
-        // TODO put here the kotlin build script plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.4"
     }
 }
 
@@ -27,7 +29,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.3.0"
     implementation "com.squareup.retrofit2:retrofit:2.3.0"
     implementation "io.reactivex.rxjava2:rxjava:2.1.2"
-    // TODO put here the kotlin standard library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.1.4"
 
     testImplementation "com.squareup.okhttp3:mockwebserver:3.8.1"
     testImplementation "junit:junit:4.12"
