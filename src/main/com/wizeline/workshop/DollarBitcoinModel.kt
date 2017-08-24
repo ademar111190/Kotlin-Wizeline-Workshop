@@ -1,3 +1,6 @@
 package com.wizeline.workshop
 
-// TODO create the DollarBitcoinModel data class and make the DollarBitcoinModelTest tests pass
+data class DollarBitcoinModel(
+        val dollar: String,
+        val bitcoin: String
+)
