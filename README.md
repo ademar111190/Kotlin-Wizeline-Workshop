@@ -1,6 +1,6 @@
 # Kotlin Wizeline Workshop
 
-It is a repository with the Kotlin wizeline workshop project
+A dollar to bitcoin converter to be used as Kotlin wizeline workshop project.
 
 ## How to
 
